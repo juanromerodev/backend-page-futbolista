@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.solucion.model.Futbolista;
@@ -20,6 +21,13 @@ public class FutbolistaController {
     @GetMapping
     public List<Futbolista> getAllFutbolistas() {
         return futbolistaService.getAllFutbolistas();
+    }
+    
+    @GetMapping(params = {"page", "size"})
+    public List<Futbolista> getAllFutbolistasPaginated(
+            @RequestParam("page") int page,
+            @RequestParam("size") int size) {
+        return futbolistaService.getAllFutbolistas(page, size);
     }
 
     @GetMapping("/{id}")
