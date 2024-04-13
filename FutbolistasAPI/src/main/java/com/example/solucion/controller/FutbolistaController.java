@@ -15,7 +15,7 @@ import com.example.solucion.service.FutbolistaService;
 
 @RestController
 @RequestMapping("/futbolistas")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class FutbolistaController {
     @Autowired
     private FutbolistaService futbolistaService;

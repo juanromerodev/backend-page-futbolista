@@ -1,5 +1,6 @@
 package com.example.solucion.security;
 
+import org.apache.catalina.filters.CorsFilter; 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,6 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 public class WebSecurityConfig {
@@ -55,8 +58,6 @@ public class WebSecurityConfig {
 	 PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	     
-
-	      
+	           
 
 }
